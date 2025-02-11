@@ -251,12 +251,20 @@ public class BinaryTree {
      *
      * Depth first search of the tree is based on recursion. This will result
      * in very few lines of code.
+     *
+     *
+     * if the tree is empty
+     * return Integer.MAX_VALUE;
+     *
+     * start at the current nodes data
+     *
+     * recursively find the minimum value of the left & right subtrees 
+     *
+     * return min value among the current data, the left & right
      */
 
     private int findMinHelper(Node node) {
 
-        // ADD YOUR CODE HERE -- USE DEPTH FIRST SEARCH OF
-        // BINARY TREE (WHICH IS BASED ON RECURSION)
 
         return Integer.MAX_VALUE;
     }
