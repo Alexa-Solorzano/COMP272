@@ -287,7 +287,7 @@ public class BinaryTree {
      *
      * declare variable to keep track on the number of nodes that contain a data value larger than 'val'
      *
-     * if current data value is greter than val 
+     * if current data value is greater than val 
      * incrementally add one to the count variable 
      *
      * recursively move through the left & right subtrees, additing to the count 
@@ -326,6 +326,18 @@ public class BinaryTree {
      *
      * Depth first search of the tree is based on recursion. This will result
      * in very few lines of code within the helper method.
+     *
+     * if the tree is empty
+     * return the array with [0,0]
+     *
+     * declare a varible to keep track of how many nodes there are 
+     * declare a variable to hold the sum of all the nodes 
+     * 
+     * recursively move through the left & right subtrees while getting the respective sum & count 
+     * 
+     * add the current nodes data to the sum and increment the count 
+     *
+     * return sum and count in an array
      */
 
     public double average() {
