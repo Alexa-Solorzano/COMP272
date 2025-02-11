@@ -1,6 +1,6 @@
 
 /*
- * *** PLACE YOUR NAME / SECTION HERE ***
+ * *** Alexa Solorzano COMP 272 001 ***
  *
  * Homework # 2 (Programming Assignment). This Java class defines a few basic
  * manipulation operations of a binary trees.
@@ -78,7 +78,7 @@ public class BinaryTree {
             right = r;
         }
 
-        public int data;
+        public int data; //value (integer value) of the current node as we traverse through the tree
         public Node left;
         public Node right;
 
@@ -90,15 +90,18 @@ public class BinaryTree {
     public void deleteTree() {
         root = null;
     }
-
+    
+// replaceValue is a public method calling on private helper method replaceValueHelper -- recursion
     public void replaceValue(int oldVal, int newVal) {
         replaceValueHelper(root, oldVal, newVal);
     }
-
+    
+// findMin is a public method calling on private helper method findMinHelper -- recursion 
     public int findMin() {
         return findMinHelper(root);
     }
 
+// nodestGT is a public method calling on private helper method nodesGTHelper -- recursion
     public int nodesGT(int val) {
         return nodesGTHelper(root, val);
     }
@@ -109,7 +112,7 @@ public class BinaryTree {
      *
      * The method will insert a node into the binary tree containing the value
      * passed in as a parameter, 'data'. This insert routine maintains the
-     * form of the binary tree which maintains teh property of a 'complete binary'
+     * form of the binary tree which maintains the property of a 'complete binary'
      * tree.
      *
      * The property basically implies that for every node in the tree:
@@ -213,17 +216,25 @@ public class BinaryTree {
      *
      * This method will traverse the tree using a depth first search
      * approach, and for each node found with the value of 'oldVal',
-     * replace it (update teh value in place), with the provided 'newVal'.
+     * replace it (update the value in place), with the provided 'newVal'.
      *
      * Depth first search of the tree is based on recursion. This will result
      * in very few lines of code.
      *
+     * 
+     * 
+     * Protect against a null node 
+     * if the current node matches with the old value
+     * replace the current node with the new value 
+     *
+     * in order to check the entire binary tree, we need to use recursion to check the right and left subtrees 
+     * replaceValueHelper(nodes to the left, oldVal, newVal)
+     * replaceValueHelper(nodes to the right, oldVal, newVal)
      */
 
     private void replaceValueHelper(Node node, int oldVal, int newVal) {
 
-        // ADD YOUR CODE HERE -- USE DEPTH FIRST SEARCH OF
-        // BINARY TREE (WHICH IS BASED ON RECURSION)
+    
 
     }
 
