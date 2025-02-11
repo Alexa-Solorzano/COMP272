@@ -281,6 +281,18 @@ public class BinaryTree {
      *
      * Depth first search of the tree is based on recursion. This will result
      * in very few lines of code.
+     *
+     * if the tree is empty(null)
+     * return -1
+     *
+     * declare variable to keep track on the number of nodes that contain a data value larger than 'val'
+     *
+     * if current data value is greter than val 
+     * incrementally add one to the count variable 
+     *
+     * recursively move through the left & right subtrees, additing to the count 
+     * 
+     * return count
      */
 
     private int nodesGTHelper(Node node, int val) {
