@@ -295,12 +295,12 @@ public class BinaryTree {
      * in very few lines of code.
      *
      * if the tree is empty(null)
-     * return -1
+     * return 0
      *
      * declare variable to keep track on the number of nodes that contain a data value larger than 'val'
      *
      * if current data value is greater than val 
-     * incrementally add one to the count variable 
+     * incrementally increase the count
      *
      * recursively move through the left & right subtrees, additing to the count 
      * 
@@ -366,21 +366,23 @@ public class BinaryTree {
       if(n == null){
         return new int[]{0, 0};
       }
-      int sum = 0;
-      int count = 0;
+        
+      int sum = 0; //declare variable to keep track of the sum
+      int count = 0; //declare variable to keep track of the count
+    //recursively traverse the left subtree 
+      int[] left = averageHelper(n.left); 
+      sum += left[0]; //add the left subtree sum
+      count =+ left[1]; //add the left subtree count
 
-      int[] left = averageHelper(n.left);
-      sum += left[0];
-      count =+ left[1];
-
+    //recursively traverse the right subtree
       int[] right = averageHelper(n.right);
-      sum += right[0];
-      count += right[1];
+      sum += right[0]; //add the right subtree sum 
+      count += right[1]; //add the right subtree count
 
-      sum += n.data;
-      count++;
+      sum += n.data; //add current node's data to the sum 
+      count++; //increment the count
 
-      return new int[]{sum, count};
+      return new int[]{sum, count}; //return sum & count in an array
     }
         
 }
