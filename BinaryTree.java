@@ -309,12 +309,12 @@ public class BinaryTree {
 
     private int nodesGTHelper(Node node, int val) {
       if(node == null){
-        return -1;
+        return 0;
       }
       int count = 0; //keep track of how many nodes are greater than the value val
 
       if(node.data > val){ // if the current node's value is greater than val
-           count = 1; // contribute one to the tracker 
+           count++; //increase the counter each time there is a value greater than val
        }
         // DFS: Recursively check the left & right subtrees & addint to the count (tracker)
       count += nodesGTHelper(node.left, val); 
