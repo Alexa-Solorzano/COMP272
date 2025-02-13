@@ -237,10 +237,10 @@ public class BinaryTree {
           return;
       }
 
-      if(node.data == oldVal){
-           node.data = newVal;
+      if(node.data == oldVal){ // current node matches old value
+           node.data = newVal; //replace it with the new value
       }
-      replaceValueHelper(node.left, oldVal, newVal);
+      replaceValueHelper(node.left, oldVal, newVal); //DFS: recursively check the tree's left & right subtrees
       replaceValueHelper(node.right, oldVal, newVal);
     }
 
@@ -270,9 +270,15 @@ public class BinaryTree {
      */
 
     private int findMinHelper(Node node) {
-
-
+      if(node == null){
         return Integer.MAX_VALUE;
+      }
+      int min = node.data; // start with the current nodes
+    // DFS: Recursively find the minimum in the left and right subtrees
+      int leftMin = findMinHelper(node.left);
+      int rightMin = findMinHelper(node.right);
+
+      return Math.min(min, Math.min(leftMin, rightMin)); //find the smallest value between current nodes and the smallest between the subtrees
     }
 
 
@@ -302,14 +308,19 @@ public class BinaryTree {
      */
 
     private int nodesGTHelper(Node node, int val) {
-
-        // ADD YOUR CODE HERE -- USE DEPTH FIRST SEARCH OF
-        // BINARY TREE (WHICH IS BASED ON RECURSION)
-
-        // return -1; // RECALL, IF TREE IS EMPTY, RETURN -1
-
-
+      if(node == null){
         return -1;
+      }
+      int count = 0; //keep track of how many nodes are greater than the value val
+
+      if(node.data > val){ // if the current node's value is greater than val
+           count = 1; // contribute one to the tracker 
+       }
+        // DFS: Recursively check the left & right subtrees & addint to the count (tracker)
+      count += nodesGTHelper(node.left, val); 
+      count += nodesGTHelper(node.right, val);
+        
+      return count; // return the total amount of nodes that are greater than val
     }
 
 
