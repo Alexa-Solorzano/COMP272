@@ -233,9 +233,15 @@ public class BinaryTree {
      */
 
     private void replaceValueHelper(Node node, int oldVal, int newVal) {
+      if(node == null){
+          return;
+      }
 
-    
-
+      if(node.data == oldVal){
+           node.data = newVal;
+      }
+      replaceValueHelper(node.left, oldVal, newVal);
+      replaceValueHelper(node.right, oldVal, newVal);
     }
 
 
